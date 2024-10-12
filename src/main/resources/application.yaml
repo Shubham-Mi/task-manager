@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: todo-list
+  datasource:
+    url: jdbc:postgresql://localhost:5432/todo-list
+    username: postgres
+    password: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
