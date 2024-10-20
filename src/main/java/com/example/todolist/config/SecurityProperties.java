@@ -14,5 +14,11 @@ public class SecurityProperties {
   private String secret;
 
   @Value("${security.jwt.expiration}")
-  private long expiration;
+  private long expirationInMs;
+
+  @Value("${security.admin.username}")
+  private String adminUsername;
+
+  @Value("${security.admin.password}")
+  private String adminPassword;
 }

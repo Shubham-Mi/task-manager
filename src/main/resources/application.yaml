@@ -11,5 +11,8 @@ spring:
       ddl-auto: none
 security:
   jwt:
-    secret: secret
-    expiration: 864000
+    secret: d585b9f74c8f095d96c167bfadcd2550a4d74ef4f6888bf9775871b0681a3f0b
+    expiration: 3600000
+  admin:
+    username: admin@admin.com
+    password: admin

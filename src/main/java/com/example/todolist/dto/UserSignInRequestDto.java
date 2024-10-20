@@ -1,5 +1,6 @@
 package com.example.todolist.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,7 +10,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
-public class CreateUserResponseDto {
+public class UserSignInRequestDto {
 
-  private String token;
+  @NotBlank
+  private String email;
+
+  @NotBlank
+  private String password;
 }
