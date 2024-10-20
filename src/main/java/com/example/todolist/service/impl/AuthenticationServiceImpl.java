@@ -8,12 +8,10 @@ import com.example.todolist.service.AuthenticationService;
 import com.example.todolist.service.JwtService;
 import com.example.todolist.service.UserService;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
 
-@Slf4j
 @Service
 @AllArgsConstructor
 public class AuthenticationServiceImpl implements AuthenticationService {
@@ -25,7 +23,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
   @Override
   public UserResponseDto signUp(CreateUserRequestDto request) {
     User user = userService.createUser(request);
-    log.info("User created: {}", user);
     return UserResponseDto.builder()
         .token(jwtService.generateToken(user))
         .build();

@@ -34,13 +34,11 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public User createUser(CreateUserRequestDto request) {
-    log.info("Create new user request: {}", request);
+    log.debug("Create new user request: {}", request);
     User user = MAPPER.toUser(request);
     user.setPassword(passwordEncoder.encode(user.getPassword()));
     user.setRole(Role.ROLE_USER);
     user = userRepository.save(user);
-
-    log.info("User with email: {} has been created", user.getEmail());
     return user;
   }
 
